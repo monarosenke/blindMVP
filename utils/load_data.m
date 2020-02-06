@@ -4,9 +4,10 @@ function mean_rsm = load_data(group, modality, roi, hemi)
 % 	group (str): one of 'blind' or 'sighted'
 % 	modality (str): one of 'audio' or 'video'
 % 	roi (str): only 'VTCn' supported for now
-% 	hemi (str or cell array): 'lh', 'rh'
-% Notes
-% 	this function averages over both hemispheres and even/odd splits 
+% 	hemi (str): 'lh', 'rh', or 'both'. If 'both', averages lh and rh data
+% 	
+% Notes 	
+% 	this script always averages odd and even data for each subject 	
 
 	% find the file path
 	data_dir = '/Users/eshed/projects/rosenke_blind/data';
