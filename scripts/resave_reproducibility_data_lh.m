@@ -1,5 +1,5 @@
 % Goal of this script is to resave each relevant quantity into a linear vector
-load('mona_reproducibility.mat');
+load('mona_reproducibility_lh.mat');
 
 group_list = [];
 category_list = [];
@@ -79,4 +79,4 @@ xlabel('Subject ID');
 
 %% save to csv
 data = [group_list, category_list, subject_list, value_list];
-csvwrite('clean_data.csv', data);
+csvwrite('clean_data_lh.csv', data);

@@ -5,7 +5,7 @@ library(nlme)
 library(sjstats)
 
 main <- function() {
-  dat <- read.csv(file = 'clean_data.csv', header = TRUE)
+  dat <- read.csv(file = 'clean_data_lh.csv', header = TRUE)
 
   df = as.data.frame(dat)
   names(df) <- c("group", "categories", "subjects", "rsm_value")
