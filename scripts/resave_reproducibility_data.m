@@ -8,10 +8,15 @@ value_list = [];
 
 data_table = t1;
 
-n_sighted = sum(strcmp(data_table.group, 'sv'));
+n_sighted_video = sum(strcmp(data_table.group, 'sv'));
+n_sighted_audio = sum(strcmp(data_table.group, 'sa'));
 n_blind = sum(strcmp(data_table.group, 'b'));
 
-subject_vector = [n_sighted+1:(n_sighted + 1 + n_blind), 1:n_sighted, 1:n_sighted];
+blind_indices = n_sighted_video+1:(n_sighted_video + 1 + n_blind);
+sighted_audio_indices = 1:n_sighted_audio;
+sighted_video_indices = 1:n_sighted_video;
+
+subject_vector = [blind_indices, sighted_audio_indices, sighted_video_indices];
 group_indices = struct('b', 1, 'sa', 2, 'sv', 3);
 
 n_rows = size(data_table.cat, 1);
